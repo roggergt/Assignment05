@@ -9,28 +9,12 @@
 #------------------------------------------#
 
 # Declare variabls
-
 strChoice = '' # User input
 lstTbl = []  # list of lists to hold data
 # TODO replace list of lists with list of dicts
 lstRow = {}  # diclist of data row
 strFileName = 'CDInventory.txt'  # data storage file
 objFile = None  # file object
-
-# Have the file load on entry
-objFile = open(strFileName, 'r')
-for row in objFile:
-    lstSvd = row.strip().split(',')
-    lstRow = {'ID': lstSvd[0], 'CD Title': lstSvd[1], 'Artist': lstSvd[2]}
-    lstTbl.append(lstRow)
-objFile.close()
-
-# Print what is in the file w/some formatting 
-
-print('ID, CD Title, Artist\n')
-for row in lstTbl:
-    print(*row.values(), sep = ' |\t ', end=' |\n\n')
-
 
 # Get user Input
 print('The Magic CD Inventory\n')
